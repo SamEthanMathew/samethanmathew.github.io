@@ -1,4 +1,4 @@
-import { FaLinkedin, FaEnvelope, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 
 export default function SocialIcons() {
   return (

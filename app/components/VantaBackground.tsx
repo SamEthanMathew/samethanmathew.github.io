@@ -18,7 +18,7 @@ export function VantaBackground({ children, className = '' }: VantaBackgroundPro
 
   useEffect(() => {
     const initVanta = () => {
-      if (window.VANTA && window.THREE && vantaRef.current) {
+      if (typeof window !== 'undefined' && window.VANTA && window.THREE && vantaRef.current) {
         // Clean up existing effect
         if (vantaEffect.current) {
           vantaEffect.current.destroy();
@@ -44,9 +44,9 @@ export function VantaBackground({ children, className = '' }: VantaBackgroundPro
     };
 
     // Initialize when scripts are loaded
-    if (window.VANTA && window.THREE) {
+    if (typeof window !== 'undefined' && window.VANTA && window.THREE) {
       initVanta();
-    } else {
+    } else if (typeof window !== 'undefined') {
       // Wait for scripts to load
       const checkScripts = setInterval(() => {
         if (window.VANTA && window.THREE) {
