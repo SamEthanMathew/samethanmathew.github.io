@@ -1,13 +1,11 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "framework": null,
   "installCommand": "npm install",
+  "framework": null,
   "devCommand": "npm run dev",
-  "functions": {
-    "build/server/index.js": {
-      "maxDuration": 30
-    }
-  }
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/build/client/assets/$1" },
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
 }
 
