@@ -6,11 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { useState } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { ResumeModal } from "./components/ResumeModal";
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/images/titleimage.png", type: "image/png" },
@@ -55,8 +53,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
-
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -71,12 +67,6 @@ export default function App() {
               <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About</a>
               <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Projects</a>
               <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contact</a>
-              <button 
-                onClick={() => setIsResumeModalOpen(true)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Resume
-              </button>
             </div>
           </div>
         </div>
@@ -86,12 +76,6 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-
-      {/* Resume Modal */}
-      <ResumeModal 
-        isOpen={isResumeModalOpen} 
-        onClose={() => setIsResumeModalOpen(false)} 
-      />
     </div>
   );
 }

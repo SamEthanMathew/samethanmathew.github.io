@@ -6,7 +6,7 @@ import SocialIcons from "../components/SocialIcons";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Sam Mathew - Portfolio" },
-    { name: "description", content: "Computer Engineering and AI @ Carnegie Mellon University - Full Stack Developer & AI Engineer" },
+    { name: "description", content: "Statistics/Machine Learning and Artificial Intelligence @ Carnegie Mellon University - Full Stack Developer & AI Engineer" },
   ];
 }
 
@@ -21,7 +21,7 @@ export default function Home() {
             <span className="gradient-text animate-fade-in-up animate-delay-200 block">Sam Mathew</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up animate-delay-400">
-            Computer Engineering and AI @ Carnegie Mellon University
+            Statistics/ML + AI @ Carnegie Mellon University
           </p>
           
           {/* Social Media Icons */}
