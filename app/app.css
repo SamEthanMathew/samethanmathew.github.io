@@ -234,3 +234,14 @@ a[href^="#"] {
 .vanta-background a {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Full-page intro: prevent scroll under overlay */
+html.intro-active,
+html.intro-active body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.intro-overlay {
+  background-color: #0a0a0a;
+}
