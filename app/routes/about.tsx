@@ -93,9 +93,9 @@ export default function About() {
             // About Me
           </p>
 
-          <div className="grid lg:grid-cols-[minmax(320px,460px)_1fr] gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-[minmax(220px,320px)_1fr] gap-12 lg:gap-20 items-start">
             {/* Portrait — stays put, cross-fades as the text scrolls, colors on hover */}
-            <div className="lg:sticky lg:top-28 self-start">
+            <div className="lg:sticky lg:top-28 self-start max-w-[320px]">
               <div className="group relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
                 {gallery.map((img, i) => (
                   <img
