@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/resume";
 import { type ResumeEntry, resume } from "../data/resume";
+import { playSelect } from "../lib/sound";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -63,6 +64,7 @@ export default function Resume() {
           <a
             href="/Sam_Mathew_Resume.pdf"
             download
+            onClick={() => playSelect()}
             className="btn-ink inline-block bg-ink text-paper font-mono text-sm uppercase tracking-widest px-6 py-2.5 rounded-sm"
           >
             Download PDF &darr;

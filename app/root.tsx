@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { SoundToggle } from "./components/SoundToggle";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -50,6 +51,7 @@ export default function App() {
       <main>
         <Outlet />
       </main>
+      <SoundToggle />
     </div>
   );
 }

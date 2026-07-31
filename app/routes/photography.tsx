@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router";
 import type { Route } from "./+types/photography";
+import { playSelect, playTick } from "../lib/sound";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -18,11 +19,14 @@ const photos = Array.from(
 export default function Photography() {
   const [open, setOpen] = useState<number | null>(null);
 
-  const close = useCallback(() => setOpen(null), []);
-  const step = useCallback(
-    (dir: number) => setOpen((i) => (i === null ? i : (i + dir + photos.length) % photos.length)),
-    [],
-  );
+  const close = useCallback(() => {
+    playTick();
+    setOpen(null);
+  }, []);
+  const step = useCallback((dir: number) => {
+    playTick();
+    setOpen((i) => (i === null ? i : (i + dir + photos.length) % photos.length));
+  }, []);
 
   useEffect(() => {
     if (open === null) return;
@@ -60,7 +64,10 @@ export default function Photography() {
               <button
                 key={src}
                 type="button"
-                onClick={() => setOpen(i)}
+                onClick={() => {
+                  playSelect();
+                  setOpen(i);
+                }}
                 className="group mb-4 block w-full overflow-hidden rounded-sm border border-line break-inside-avoid"
                 aria-label={`Open photo ${i + 1}`}
               >

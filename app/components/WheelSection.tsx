@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import OptionWheel from "./OptionWheel";
-import { SoundToggle } from "./SoundToggle";
 import { sections } from "../data/sections";
 import { playSelect, playTick } from "../lib/sound";
 
@@ -54,9 +53,6 @@ export function WheelSection() {
           }}
         />
       </div>
-
-      {/* Sound mute toggle */}
-      <SoundToggle className="absolute top-6 right-6 z-20 md:top-8 md:right-8" />
 
       {/* Invitation — its own column on the right (lg+), so it never overlaps the wheel */}
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] items-center pr-8 xl:pr-16 lg:flex">

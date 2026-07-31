@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import type { Route } from "./+types/projects";
 import { CATEGORIES, type Category, projects } from "../data/projects";
+import { playSelect, playTick } from "../lib/sound";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -52,6 +53,7 @@ export default function Projects() {
                   key={cat}
                   type="button"
                   onClick={() => {
+                    playTick();
                     setCategory(cat);
                     setOpen(null);
                   }}
@@ -113,7 +115,11 @@ export default function Projects() {
                       >
                         <button
                           type="button"
-                          onClick={() => setOpen(expanded ? null : project.title)}
+                          onClick={() => {
+                            if (expanded) playTick();
+                            else playSelect();
+                            setOpen(expanded ? null : project.title);
+                          }}
                           aria-expanded={expanded}
                           className="group w-full text-left py-8"
                         >

@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { initMuted, setMuted } from "../lib/sound";
 
-/** Small, subtle control to mute/unmute the UI sounds (persisted in localStorage). */
-export function SoundToggle({ className = "" }: { className?: string }) {
+/**
+ * Global, fixed mute/unmute control for the site's UI sounds.
+ * Styled as a translucent pill so it reads on both light and dark backgrounds.
+ * Preference persists in localStorage.
+ */
+export function SoundToggle() {
   const [muted, setLocalMuted] = useState(false);
 
   useEffect(() => {
@@ -22,10 +26,14 @@ export function SoundToggle({ className = "" }: { className?: string }) {
       onClick={toggle}
       aria-label={muted ? "Unmute sounds" : "Mute sounds"}
       aria-pressed={muted}
-      className={`pointer-events-auto flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-line/40 hover:text-line transition-colors ${className}`}
+      className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full border border-muted/20 bg-paper/70 px-3.5 py-2 font-mono text-[0.7rem] uppercase tracking-widest text-muted backdrop-blur transition-colors hover:border-muted/50 hover:text-ink"
     >
-      {muted ? <FaVolumeMute className="h-3.5 w-3.5" /> : <FaVolumeUp className="h-3.5 w-3.5" />}
-      <span>{muted ? "sound off" : "sound on"}</span>
+      {muted ? (
+        <FaVolumeMute className="h-3.5 w-3.5" />
+      ) : (
+        <FaVolumeUp className="h-3.5 w-3.5" />
+      )}
+      <span className="hidden sm:inline">{muted ? "muted" : "sound"}</span>
     </button>
   );
 }

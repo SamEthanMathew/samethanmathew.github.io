@@ -101,7 +101,7 @@ export default function Home() {
       <WheelSection />
 
       {/* Footer */}
-      <footer className="bg-ink text-paper border-t border-white/10 py-10">
+      <footer className="bg-ink text-paper border-t border-white/10 pt-10 pb-20">
         <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-display font-bold tracking-tight text-paper">
             {site.name}
