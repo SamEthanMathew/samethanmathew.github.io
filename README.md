@@ -1,87 +1,68 @@
-# Welcome to React Router!
+# Sam Mathew — Portfolio
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Personal portfolio site for Sam Mathew (Statistics/ML + AI @ Carnegie Mellon University).
+A single-page site with an animated intro, a Vanta NET hero background, and sections for
+About, Projects, and Contact.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Tech stack
 
-## Features
+- **React 19** + **React Router 7** (SPA mode — `ssr: false`)
+- **Tailwind CSS v4**
+- **Framer Motion** — intro overlay transition
+- **Three.js** — the particle orb shown during the intro
+- **Vanta NET** (loaded from CDN) — animated hero background
+- Deployed on **Vercel** (static `build/client` output)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Project structure
 
-## Getting Started
+```
+app/
+  root.tsx              App shell: <head> links, Navbar, IntroExperience wrapper
+  routes.ts             Route manifest (single index route)
+  routes/home.tsx       The one page: Hero → About → Projects → Contact → Footer
+  app.css               Tailwind entry + custom animations
+  components/
+    IntroExperience.tsx Fade-in intro overlay (respects prefers-reduced-motion)
+    ParticleOrb.tsx     Three.js point-cloud orb shown during the intro
+    VantaBackground.tsx Animated Vanta NET hero wrapper
+    Navbar.tsx          Fixed top navigation
+    ProjectCard.tsx     Single project card
+    ContactCard.tsx     Single contact-method card
+    SocialIcons.tsx     Hero social icon row
+    ScrollAnimation.tsx IntersectionObserver reveal-on-scroll wrapper
+  data/
+    site.ts             Name, role, email, nav links
+    projects.ts         Project cards content
+    socials.ts          Social/contact links (shared by hero + contact)
+public/
+  images/               pfp.jpg, titleimage.png (favicon / SM monogram)
+```
 
-### Installation
+Content lives in `app/data/` — edit `projects.ts`, `socials.ts`, or `site.ts` to update the
+site without touching layout code.
 
-Install the dependencies:
+## Getting started
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+Start the dev server (http://localhost:5173):
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+## Building for production
 
 ```bash
-npm run build
+npm run build      # outputs to build/client (static)
+npm run typecheck  # react-router typegen + tsc
 ```
 
 ## Deployment
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Configured for Vercel via `vercel.json` (static `build/client`). A `Dockerfile` is also
+included for container-based hosting.

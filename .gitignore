@@ -107,3 +107,6 @@ references/
 *.njsproj
 *.sln
 *.sw?
+
+# graphify tooling output
+graphify-out/
