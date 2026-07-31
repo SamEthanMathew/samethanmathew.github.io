@@ -20,11 +20,11 @@ function SectionTitle({ children }: { children: string }) {
 function Entry({ entry }: { entry: ResumeEntry }) {
   return (
     <div className="mb-5 last:mb-0 print:mb-2.5">
-      <div className="flex items-baseline justify-between gap-4">
+      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <h3 className="font-display text-[0.95rem] font-semibold text-ink leading-snug print:text-[0.8rem]">
           {entry.title}
         </h3>
-        <span className="shrink-0 font-mono text-[0.7rem] text-muted whitespace-nowrap print:text-[0.62rem]">
+        <span className="shrink-0 font-mono text-[0.7rem] text-muted sm:whitespace-nowrap print:text-[0.62rem]">
           {entry.meta}
         </span>
       </div>
@@ -91,11 +91,11 @@ export default function Resume() {
           {/* Education */}
           <section className="mb-7 print:mb-4">
             <SectionTitle>Education</SectionTitle>
-            <div className="flex items-baseline justify-between gap-4">
+            <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
               <h3 className="font-display text-[0.95rem] font-semibold text-ink print:text-[0.8rem]">
                 {resume.education.school}
               </h3>
-              <span className="shrink-0 font-mono text-[0.7rem] text-muted whitespace-nowrap print:text-[0.62rem]">
+              <span className="shrink-0 font-mono text-[0.7rem] text-muted sm:whitespace-nowrap print:text-[0.62rem]">
                 {resume.education.meta}
               </span>
             </div>

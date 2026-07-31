@@ -43,13 +43,13 @@ export default function Experience() {
   return (
     <section className="min-h-screen bg-paper py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-[minmax(300px,400px)_1fr] gap-12 lg:gap-24 items-start">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(300px,400px)_1fr] gap-12 lg:gap-24 items-start">
           {/* Sticky index — stays put while the cards scroll */}
-          <div className="md:sticky md:top-28 self-start">
+          <div className="lg:sticky lg:top-28 self-start">
             <p className="font-mono text-base uppercase tracking-[0.18em] text-muted mb-5">
               // Experience
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-12">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-12">
               Where I&rsquo;ve worked.
             </h1>
 

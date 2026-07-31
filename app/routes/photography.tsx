@@ -46,7 +46,7 @@ export default function Photography() {
           <p className="font-mono text-base uppercase tracking-[0.18em] text-muted mb-5">
             // Photography
           </p>
-          <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-5">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-5">
             Through the lens.
           </h1>
           <p className="text-xl text-muted mb-14 max-w-2xl">

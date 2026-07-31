@@ -39,7 +39,7 @@ export default function Projects() {
           <p className="font-mono text-base uppercase tracking-[0.18em] text-muted mb-5">
             // Projects
           </p>
-          <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-10">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-10">
             Things I&rsquo;ve built.
           </h1>
 
@@ -67,9 +67,9 @@ export default function Projects() {
             })}
           </div>
 
-          <div className="grid md:grid-cols-[minmax(220px,280px)_1fr] gap-12 lg:gap-20 items-start">
-            {/* Skills panel — highlights on project hover */}
-            <div className="md:sticky md:top-28 self-start">
+          <div className="grid lg:grid-cols-[minmax(220px,280px)_1fr] gap-12 lg:gap-20 items-start">
+            {/* Skills panel — highlights on project hover (desktop only) */}
+            <div className="hidden lg:block lg:sticky lg:top-28 self-start">
               <p className="font-mono text-sm uppercase tracking-widest text-muted mb-6">
                 Skills
               </p>

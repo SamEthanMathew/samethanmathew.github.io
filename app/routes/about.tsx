@@ -93,9 +93,9 @@ export default function About() {
             // About Me
           </p>
 
-          <div className="grid md:grid-cols-[minmax(320px,460px)_1fr] gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-[minmax(320px,460px)_1fr] gap-12 lg:gap-20 items-start">
             {/* Portrait — stays put, cross-fades as the text scrolls, colors on hover */}
-            <div className="md:sticky md:top-28 self-start">
+            <div className="lg:sticky lg:top-28 self-start">
               <div className="group relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
                 {gallery.map((img, i) => (
                   <img
@@ -122,10 +122,10 @@ export default function About() {
 
             {/* The story — the only part that moves */}
             <div>
-              <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-8">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-ink leading-[1.05] mb-8">
                 Teaching robots to know what they don&rsquo;t know.
               </h1>
-              <p className="text-2xl text-muted leading-relaxed mb-16">
+              <p className="text-xl md:text-2xl text-muted leading-relaxed mb-16">
                 I&rsquo;m Sam &mdash; a junior at Carnegie Mellon studying Statistics &amp;
                 Machine Learning with an additional major in Artificial Intelligence. I spend
                 most of my time on robot learning, specifically the part I find most
