@@ -7,6 +7,5 @@ export default [
   route("projects", "routes/projects.tsx"),
   route("research", "routes/research.tsx"),
   route("resume", "routes/resume.tsx"),
-  route("blogs", "routes/blogs.tsx"),
   route("photography", "routes/photography.tsx"),
 ] satisfies RouteConfig;

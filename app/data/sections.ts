@@ -11,6 +11,5 @@ export const sections: Section[] = [
   { label: "Projects", path: "/projects" },
   { label: "Research", path: "/research" },
   { label: "Resume", path: "/resume" },
-  { label: "Blogs", path: "/blogs" },
   { label: "Photography", path: "/photography" },
 ];
